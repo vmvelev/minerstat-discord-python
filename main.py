@@ -16,12 +16,15 @@ RPC = Presence(client_id, pipe=0)  # Initialize the client class
 RPC.connect() # Start the handshake loop
 if 'worker_2' in globals():
     wor2 = True
+    worker_2 = worker_2.upper()
 else:
     wor2 = False
 if 'worker_3' in globals():
     wor3 = True
+    worker_3 = worker_3.upper()
 else:
     wor3 = False
+worker_1 = worker_1.upper()
 
 while True:  # The presence will stay on as long as the program is running
     
