@@ -11,7 +11,6 @@ worker_2 = 'your 2nd worker name' # Put your second worker name here
 worker_3 = 'your 3rd worker name' # Put your third worker name here
 #####################################
 
-temp = 0
 RPC = Presence(client_id, pipe=0)  # Initialize the client class
 RPC.connect() # Start the handshake loop
 if 'worker_2' in globals():
@@ -27,7 +26,7 @@ else:
 worker_1 = worker_1.upper()
 
 while True:  # The presence will stay on as long as the program is running
-    
+    temp = 0
     response = requests.get("https://api.minerstat.com/v2/stats/"+access_key)
     json_response = response.text
     y = json.loads(json_response)
